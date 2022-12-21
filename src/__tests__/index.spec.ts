@@ -6,7 +6,7 @@ import readConfig from "../index.js";
 import { SchemaViolationError } from "../schema-violation-error.js";
 
 const currentDir = dirname(fileURLToPath(import.meta.url));
-const testDir = join(currentDir, "..", "..", "..", "test");
+const testDir = join(currentDir, "..", "..", "test");
 
 describe("readConfig", () => {
   it("should read", async () => {
