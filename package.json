@@ -1,0 +1,57 @@
+{
+  "name": "@groovox/config",
+  "version": "1.0.0",
+  "description": "Environment variables configuration for Groovox",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint --ext .ts,.tsx src",
+    "prebuild": "rimraf lib",
+    "build": "tsc",
+    "test": "mocha"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "keywords": [
+    "Groovox"
+  ],
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/groovox/config#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/groovox/config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/groovox/config/issues"
+  },
+  "author": "Joshua Avalon",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/lodash-es": "^4.17.6",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.1.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "ajv": "8.11.2",
+    "ajv-formats": "2.1.1",
+    "lodash-es": "4.17.21",
+    "read-env-vars": "1.0.0"
+  }
+}
