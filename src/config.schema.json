@@ -5,33 +5,27 @@
   "description": "Environment variables configuration for Groovox",
   "type": "object",
   "properties": {
-    "storage": {
-      "oneOf": [
-        {
-          "$ref": "#/definitions/S3Storage"
-        }
-      ]
-    }
-  },
-  "required": ["storage"],
-  "additionalProperties": false,
-  "definitions": {
-    "S3Storage": {
+    "database": {
+      "title": "DatabaseConfig",
       "type": "object",
+      "description": "PostgreSQL Database configuration",
       "properties": {
-        "type": {
-          "type": "string",
-          "const": "S3"
+        "url": {
+          "description": "Connection URL",
+          "type": "string"
         },
-        "s3": {
-          "$ref": "#/definitions/S3"
+        "migrate": {
+          "description": "Migrate to latest version on start",
+          "type": "boolean"
         }
       },
-      "required": ["type", "s3"],
+      "required": ["url", "migrate"],
       "additionalProperties": false
     },
-    "S3": {
+    "storage": {
+      "title": "StorageConfig",
       "type": "object",
+      "description": "S3 or S3 compatible storage for media files",
       "properties": {
         "bucket": {
           "type": "string"
@@ -58,7 +52,10 @@
           "type": "boolean"
         }
       },
-      "required": ["bucket", "endPoint", "accessKey", "secretKey"]
+      "required": ["bucket", "endPoint", "accessKey", "secretKey"],
+      "additionalProperties": false
     }
-  }
+  },
+  "required": ["database", "storage"],
+  "additionalProperties": false
 }

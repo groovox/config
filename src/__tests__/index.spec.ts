@@ -13,18 +13,19 @@ describe("readConfig", () => {
     dotenv.config({ path: join(testDir, "example.env"), override: true });
     const config = readConfig();
     assert.deepEqual(config, {
+      database: {
+        url: "postgres://postgres:postgres@localhost:5432/groovox",
+        migrate: true
+      },
       storage: {
-        type: "S3",
-        s3: {
-          bucket: "bucket",
-          endPoint: "endPoint",
-          accessKey: "accessKey",
-          secretKey: "secretKey",
-          useSsl: true,
-          port: 443,
-          region: "region",
-          pathStyle: true
-        }
+        bucket: "bucket",
+        endPoint: "endPoint",
+        accessKey: "accessKey",
+        secretKey: "secretKey",
+        useSsl: true,
+        port: 443,
+        region: "region",
+        pathStyle: true
       }
     });
   });

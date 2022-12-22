@@ -1,13 +1,27 @@
+/**
+ * Environment variables configuration for Groovox
+ */
 export interface GroovoxConfig {
-  storage: S3Storage;
+  database: DatabaseConfig;
+  storage: StorageConfig;
 }
-
-export interface S3Storage {
-  type: "S3";
-  s3: S3;
+/**
+ * PostgreSQL Database configuration
+ */
+export interface DatabaseConfig {
+  /**
+   * Connection URL
+   */
+  url: string;
+  /**
+   * Migrate to latest version on start
+   */
+  migrate: boolean;
 }
-
-export interface S3 {
+/**
+ * S3 or S3 compatible storage for media files
+ */
+export interface StorageConfig {
   bucket: string;
   endPoint: string;
   accessKey: string;
@@ -16,5 +30,4 @@ export interface S3 {
   port?: number;
   region?: string;
   pathStyle?: boolean;
-  [k: string]: unknown;
 }
