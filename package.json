@@ -5,14 +5,14 @@
   "type": "module",
   "scripts": {
     "lint": "eslint --ext .ts,.tsx src",
-    "prebuild": "rimraf lib",
+    "prebuild": "rimraf dist",
     "build": "tsc",
     "test": "mocha"
   },
   "exports": {
     ".": {
-      "import": "./lib/index.js",
-      "types": "./lib/index.d.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "keywords": [

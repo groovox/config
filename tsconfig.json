@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "lib",
+    "outDir": "dist",
     "target": "es2021",
     "module": "NodeNext",
     "lib": ["esnext"],

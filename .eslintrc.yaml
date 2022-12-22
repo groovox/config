@@ -12,11 +12,10 @@ env:
   node: true
 ignorePatterns:
   - node_modules
-  - "**/lib"
+  - "**/dist"
   - "**/*.generated.ts"
   - "**/generated/index.ts"
   - "**/*.d.ts"
-  - "**/test-lib"
 rules:
   array-callback-return: error
   arrow-body-style:
